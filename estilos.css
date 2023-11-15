@@ -5,42 +5,63 @@ body{
     background-color: rgb(34, 4, 28);
     background-color:oklch(22.35% 0.104 284.82);
     color:#F5F5F5 ;
+    font-size: large;
+    padding: 0 10vw;
 }
-header h1, p {
-    color:#F5F5F5 ;
+p, ul{
+    color:#F5F5F5
+}
+.cabecera{
+    display: flex;
+    justify-content: space-between;
     font-family: 'Cascadia Code';
 }
-#navbar{
+.barra-nav{
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 25px;
+}
+.avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.avatar > *{
+    padding: 10px;
 }
 .link{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+}
+.link a{
     text-decoration: none;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:#F5F5F5 ;
-    transition: transform(0.2s);
-    margin-left: 10px;
-    padding-bottom: 10px;
+    transition: transform(0.1s);
 }
-.link:hover{
-    transform: scale(1.1);
+.link a:hover{
+    transform: scale(1.05);
     color: rosybrown;
 }
-.link:active{
+.link a:active{
     color: darkorchid;
 }
 
-.figure{
+.avatar{
     float: right;
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
     color:#F5F5F5 ;
 }
-.figure div{
+.avatar div{
     display: block;
 }
-.figure button{
+.avatar button{
     background-color: blueviolet;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     border-radius: 5%;
@@ -51,13 +72,12 @@ header h1, p {
     transition: transform(0.2s);
     box-shadow: 1px 1px 4px #9061BE;
 }
-.figure button:hover{
+.avatar button:hover{
     transform: scale(1.1);
 }
-.figure img{
+.avatar img{
     border-radius: 50%;
 }
-
 section#bio, #formacion,#skills, #contacto{
     clear: both;
     width: 100%;
@@ -65,15 +85,9 @@ section#bio, #formacion,#skills, #contacto{
     max-width: 800px;
     padding: 5px;
 }
-section p, ul{
-    color:#F5F5F5 ;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 section ul{
     line-height: 2;
 }
-
 section#contacto, form{
     display: block;
     text-align: left;
@@ -91,10 +105,9 @@ label, input, textarea {
     font-family: 'Cascadia Code';
     color:#F5F5F5 ;
     margin-left: 10px;
-    transition: transform(0.2s);
 }
 .lfooter:hover{
-    transform: scale(1.1);
+    color: rosybrown;
 }
 
 
