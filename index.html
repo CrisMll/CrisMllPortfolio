@@ -82,17 +82,22 @@
                     <h3>Contacto</h3>
                 </header>
                 <article>
-                    <form method="post" action="/"></form>
+                    <form method="post" action="/">
                         <fieldset>
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" name="nombre" placeholder="Indica tu nombre" size="20" maxlength="50">
+                            <input required type="text" id="name" name="nombre" placeholder="Indica tu nombre" size="20" maxlength="50"
+                            pattern="[a-zA-Z]{3,50}">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Indica tu email">
+                            <input required type="email" name="email" id="email" placeholder="Indica tu email"
+                            pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.+[a-zA-Z]{2,}$">
                             <label for="asunto">Asunto</label>
-                            <input type="text" id="asunto" name="asunto" size="50">
+                            <input required type="text" id="asunto" name="asunto" size="50"
+                            pattern="[a-zA-Z]{4,50}">
                             <label for="mensaje">Mensaje: </label>
-                            <textarea name="mensaje" rows="10" cols="50" maxlength="350"></textarea>
+                            <textarea required name="mensaje" rows="10" cols="50" maxlength="350"></textarea>
+                            <button id="botonform" type="submit">Enviar</button>
                         </fieldset>
+                    </form>
                 </article>
             </section>
         </main>
