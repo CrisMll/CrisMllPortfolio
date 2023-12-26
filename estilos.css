@@ -286,11 +286,29 @@ input:invalid::after {
 
 
 
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0 5vw;
+    }
 
+    .cabecera {
+        flex-direction: column;
+    }
 
+    .barra-nav {
+        flex-direction: column;
 
+        .logo {
+            margin: 25px auto;
 
+            padding: 20px 20px;/ form {
+                width: 80vw;
+            }
+        }
 
+    }
+
+}
 
 
 /*.linkfooter{
