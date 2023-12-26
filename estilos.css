@@ -1,99 +1,167 @@
 html {
     scroll-behavior: smooth;
 }
-body{
-    background-color: rgb(34, 4, 28);
-    background-color:oklch(22.35% 0.104 284.82);
-    color:#F5F5F5 ;
-    font-size:large;
+
+:root {
+    --color_fondo: #22202C;
+    --color_titulos: #D4F7E0;
+    --color_subtitulos: #F3EAF4;
+    --color_botones: #7D256F;
+    --color_texto: #FAF9FB;
+    --color_hover: rosybrown;
+    --color_active: darkorchid;
+}
+
+body {
+    background-color: var(--color_fondo);
+    color: var(--color_texto);
+    font-size: large;
     padding: 0 10vw;
 }
-h1{
+
+h1 {
     font-family: 'Cascadia Code';
     margin: 0 5%;
 }
-p, ul{
-    color:#F5F5F5
+
+p,
+ul {
+    color: var(--color_texto)
 }
-.cabecera{
+
+.cabecera {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     font-family: 'Cascadia Code';
 }
-.barra-nav{
+
+.barra-nav {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
 }
-.logo{
+
+.logo {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 25px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 40px 40px;
 }
-.avatar{
+
+.logo img {
+    display: flex;
+    margin: auto
+}
+
+.avatar {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
 
 }
-.avatar > *{
+
+.avatar>* {
     padding: 10px;
 }
-.link{
+
+.link {
     display: flex;
     justify-content: space-between;
     width: 100%;
     max-width: 600px;
 }
-.link a{
+
+.link a {
     text-decoration: none;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color:#F5F5F5 ;
+    color: var(--color_subtitulos);
     transition: transform(0.1s);
+    margin: 0 10px;
 }
-.link a:hover{
+
+.link a:hover {
     transform: scale(1.05);
-    color: rosybrown;
+    color: var(--color_hover);
 }
-.link a:active{
-    color: darkorchid;
+
+.link a:active {
+    color: var(--color_active);
 }
-button{
-    background-color: blueviolet;
+
+#botonform,
+button {
+    display: block;
+    background-color: var(--color_botones);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    border-radius: 5%;
+    border-radius: 10px;
     border-style: none;
     cursor: pointer;
-    color:blanchedalmond;
-    padding: 8;
+    color: var(--color_texto);
+    font-size: 1.2em;
+    padding: 10px 40px;
 }
-#cv{
+
+#botonform {
+    margin: 20px auto;
+    height: auto;
+    padding: 10px 40px;
+    font-size: 1.2em;
+}
+
+#cv {
     transition: transform(0.2s);
     box-shadow: 1px 1px 4px #9061BE;
 }
-#cv:hover{
+
+#cv:hover {
     transform: scale(1.1);
 }
-.avatar img{
+
+.avatar img {
     border-radius: 50%;
 }
-section#bio, #formacion,#skills, #contacto{
+
+h2 {
+    text-align: center;
+    font-family: 'Cascadia Code', monospace;
+    color: var(--color_titulos);
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+section#bio,
+#formacion,
+#skills,
+#contacto {
     clear: both;
     width: 100%;
     margin: auto;
     max-width: 800px;
     padding: 5px;
 }
-section ul{
-    line-height: 2;
+
+#bio p,
+#formacion p,
+#skills p {
+    font-family: 'Roboto', sans-serif;
 }
-section#contacto, form{
+
+section ul {
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+}
+
+section#contacto,
+form {
     display: block;
     text-align: left;
     margin: 10px 0;
@@ -101,32 +169,120 @@ section#contacto, form{
     margin-left: auto;
     margin-right: auto;
 }
-label, input, textarea {
+
+label,
+input,
+textarea {
     display: block;
     margin-bottom: 10px;
 }
-input:valid{
-    border:2px solid #bd5ebd;
+
+form {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 60vw;
+    min-width: 300px;
+    padding-bottom: 2em;
 }
-input:focus:invalid{
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+fieldset {
+    border: 0;
+    border-bottom: 3px solid #3b3b4f;
+    padding: 2rem 0 2rem 0;
+}
+
+fieldset:last-of-type {
+    border-bottom: none;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    margin: 10px 0 0 0;
+    min-height: 2em;
+}
+
+#skills article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    text-align: left;
+    width: fit-content;
+}
+
+#formacion article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+input:valid {
+    border: 2px solid var(--color_active);
+}
+
+input:focus:invalid {
     border: 2px solid red;
 }
+
 input:invalid::after {
     content: "Por favor, introduce un valor correcto.";
     color: red;
-  }
-.lfooter{
+}
+
+.lfooter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.lfooter a {
     text-decoration: none;
     font-family: 'Cascadia Code';
-    color:#F5F5F5 ;
-    margin-left: 10px;
-}
-.lfooter:hover{
-    color: rosybrown;
+    color: var(--color_texto);
+    transition: transform 0.2s;
+    margin: 0 10px;
 }
 
+.lfooter a:hover {
+    color: var(--color_hover);
+    transform: scale(1.05);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contenedor-formacion {
+    border: 1px solid var(--color_subtitulos);
+    margin: 0, 20px, 0, 0;
+    background-color: var(--color_fondo);
+    color: var(--color_texto);
+    flex-basis: 60%;
+}
+
+.p_formacion {
+    margin-left: 20px;
+}
 
 
+.foot-formacion {
+    flex-basis: 20%;
+    margin-left: 50px;
+    align-items: flex-end;
+}
 
 
 
